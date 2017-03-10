@@ -53,7 +53,6 @@ $(function ($) {
 			});
 			for (var i = 0; i < sides.length; i++) {
 				var day = $('<div class=' + sides[i] + '></div>');
-				var c = colors[Math.floor(Math.random() * (colors.length - 1))];
 				day.css({
 					backgroundImage: 'url(' + images[i] + ')',
 					width: cubeSize,
