@@ -1,0 +1,133 @@
+html,
+body,
+body * {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	background-color: #555;
+}
+
+.mainCon {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	align-items: center;
+}
+
+.cubeContainer {
+	position: relative;
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+	-webkit-perspective: 1000px;
+	-webkit-perspective-origin: 50% 50%;
+	margin: 10px;
+}
+
+.box {
+	width: 400px;
+	height: 400px;
+	transform-style: preserve-3d;
+	transform-origin: center;
+	transition: all 0.3s;
+	margin: 20px;
+}
+
+.top,
+.bottom,
+.left,
+.right,
+.front,
+.back {
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	font-size: 1.5em;
+	line-height: 100px;
+	text-align: center;
+	color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.top {
+	transform-origin: top;
+	transform: rotateX(-270deg) translateY(-200px);
+}
+
+.bottom {
+	transform-origin: bottom;
+	transform: rotateX(270deg) translateY(200px);
+}
+
+.left {
+	transform-origin: left;
+	transform: rotateY(270deg) translateX(-200px);
+}
+
+.right {
+	transform-origin: right;
+	transform: rotateY(-270deg) translateX(200px);
+}
+
+.front {
+	transform: translateZ(200px);
+}
+
+.back {
+	transform: translateZ(-200px) rotateY(180deg);
+}
+
+.button {
+	position: absolute;
+	background-color: #222;
+	color: whitesmoke;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s all;
+}
+
+.button > div {
+	width: 40%;
+	height: 40%;
+	box-sizing: border-box;
+	border-right: none;
+	border-bottom: none;
+	border-top: 2px solid;
+	border-left: 2px solid;
+	transition: 0.3s all;
+}
+
+.button.top > div {
+	transform: translateY(30%) rotateZ(45deg);
+}
+
+.button.bottom > div {
+	transform: translateY(-30%) rotateZ(-135deg)
+}
+
+.button.left > div {
+	transform: translateX(30%) rotateZ(-45deg);
+}
+
+.button.right> div {
+	transform: translateX(-30%) rotateZ(135deg);
+}
+
+.button:hover {
+	background-color: #444;
+}
+
+.button:active {
+	border-color: #555;
+}
+
+.button:active div {
+	border-color: #222;
+}
